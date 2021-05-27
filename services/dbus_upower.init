@@ -1,0 +1,2 @@
+#!/bin/sh
+python3 -m dbusmock --template upower 2>&1 | tee /var/log/dbus_upower.log

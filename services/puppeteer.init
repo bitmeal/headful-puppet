@@ -1,0 +1,2 @@
+#!/bin/sh
+node /opt/puppeteer/puppeteer.js 2>&1 | tee /var/log/puppeteer.log

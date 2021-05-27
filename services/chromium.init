@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# wait for xvfb
+until pgrep runsvdir
+do
+  sleep 0.1
+done
+sleep 0.1
+
+
+CHROMIUM_OPTIONS_EXTRA='--disable-background-networking --enable-features=NetworkService,NetworkServiceInProcess --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=Translate --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-sync --force-color-profile=srgb --metrics-recording-only --no-first-run --enable-automation --password-store=basic --use-mock-keychain --enable-blink-features=IdleDetection'
+
+#/usr/bin/chromium-browser --remote-debugging-address=0.0.0.0 --remote-debugging-port=9992 --no-sandbox 2>&1 | tee /var/log/chromium.log
+/opt/chromium/latest/chrome --remote-debugging-address=0.0.0.0 --remote-debugging-port=9992 --no-sandbox ${CHROMIUM_OPTIONS_EXTRA} 2>&1 | tee /var/log/chromium.log

@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/dbus-daemon --system --nofork --nopidfile 2>&1 | tee /var/log/dbus.log

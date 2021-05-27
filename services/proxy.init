@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/socat tcp-listen:${PORT},reuseaddr,fork tcp:localhost:${PORT_INTERNAL} >> /var/log/proxy.log 2>&1

@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/Xvfb :99 >> /var/log/xvfb.log 2>&1
